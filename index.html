@@ -12,9 +12,14 @@
       <section class="searchSection">
         <div class="searchBar">
           <input type="search" name="searchWeather" id="searchWeather" />
-          <button class="searchBtn">Search</button>
+          <button class="searchBtn" id="searchBtn">Search</button>
         </div>
-        <div class="weatherCard">
+        <div class="initalContainer">
+            <p>Search Weather of different countries...</p>
+        </div>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWxkODJoZDB5ZG05aGIzMndpODljN2J6bjI3ZnJkODk3dWI5c2lwdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RRl5VP2IaeInK6OQYc/giphy.gif" alt="loading giphy" class=" loading">
+        <div class="searchContainer">
+          <div class="weatherCard">
             <div class="searchName">
               <h1 class="placeName"></h1>
               <div class="placeRegionCountry">
@@ -23,32 +28,47 @@
               </div>
             </div>
             <div class="searchCondition">
-                <img src="" alt="weather" class="placeConditionImage">
-                <p class="placeCondition"></p>
+              <img src="" alt="weather" class="placeConditionImage" />
+              <p class="placeCondition"></p>
             </div>
           </div>
           <div class="tempCard">
             <div>
-                <p class="label">Current Temperature</p>
-                <p class="currentTemp">&#8451;</p>
+              <p class="label">Current Temperature</p>
+              <p class="currentTemp">&#8451;</p>
             </div>
             <div>
-                <p class="label">Feels Like</p>
-                <p class="feelsLikeTemp"></p>
+              <p class="label">Feels Like</p>
+              <p class="feelsLikeTemp"></p>
             </div>
           </div>
           <div class="humidityWind">
-             <div>
-                <p class="label">Humidity</p>
-                <p class="currentHumidity"></p>
+            <div>
+              <p class="label">Humidity</p>
+              <p class="currentHumidity"></p>
             </div>
             <div>
-                <p class="label">Wind</p>
-                <p class="currentWind"></p>
+              <p class="label">Wind</p>
+              <p class="currentWind"></p>
             </div>
           </div>
+        </div>
       </section>
-      <section class="currentSection"></section>
+      <section class="currentSection">
+        <div class="currentWeatherCard">
+          <div class="currentNameSec">
+            <h1 class="cName"></h1>
+            <div class="currentRegionCountry">
+              <p class="currentRegion"></p>
+              <p class="currentCountry"></p>
+            </div>
+          </div>
+          <div class="currentConditionCard">
+            <img src="" alt="" class="currentConditionImg" />
+            <p class="currentConditionMsg"></p>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
