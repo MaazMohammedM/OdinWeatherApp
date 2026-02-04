@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+:root{
+    --bg-primary : #000957;
+    --bg-secondary : #344CB7;
+    --bg-accent : #577BC1;
+    --color-accent: #FFEB00;
+    --font-family: "Iceland", sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body{
+     font-family: var(--font-family);
+     background-color: var(--bg-primary);
+     min-height: 100%;
+}
+
+main{
+    display: flex;
+    flex: 1;
+    align-items: start;
+    gap: 2rem;
+    padding: 5rem;
+}
+
+.searchSection, .currentSection{
+    width: 75%;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+#searchWeather{
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    outline: none;
+    border-radius: 1rem;
+    font-family: var(--font-family);
+    color: var(--color-accent);
+    background-color: var(--bg-secondary);
+    font-weight: 400;
+    width: 100%;
+}
+
+.searchBtn{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: var(--bg-secondary);
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.weatherCard{
+    padding: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.placeName, .placeCondition{
+    color: var(--color-accent);
+    font-size: 4rem;
+}
+
+.placeRegionCountry{
+    display: flex;
+    align-items: center;
+    color: var(--color-accent);
+    gap: 0.25rem;
+}
+
+.searchCondition{
+    display: flex;
+    align-items: center;
+}
+
+.tempCard, .humidityWind{
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-secondary);
+    margin-bottom: 1rem;
+}
+
+.label{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.currentTemp, .feelsLikeTemp, .currentHumidity, .currentWind{
+    font-size: 5rem;
+    color: var(--color-accent);
+}
+
+.currentSection{
+    width: 25%;
+}

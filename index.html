@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Weather App</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="searchSection">
+        <div class="searchBar">
+          <input type="search" name="searchWeather" id="searchWeather" />
+          <button class="searchBtn">Search</button>
+        </div>
+        <div class="weatherCard">
+            <div class="searchName">
+              <h1 class="placeName"></h1>
+              <div class="placeRegionCountry">
+                <p class="placeRegion"></p>
+                <p class="placeCountry"></p>
+              </div>
+            </div>
+            <div class="searchCondition">
+                <img src="" alt="weather" class="placeConditionImage">
+                <p class="placeCondition"></p>
+            </div>
+          </div>
+          <div class="tempCard">
+            <div>
+                <p class="label">Current Temperature</p>
+                <p class="currentTemp">&#8451;</p>
+            </div>
+            <div>
+                <p class="label">Feels Like</p>
+                <p class="feelsLikeTemp"></p>
+            </div>
+          </div>
+          <div class="humidityWind">
+             <div>
+                <p class="label">Humidity</p>
+                <p class="currentHumidity"></p>
+            </div>
+            <div>
+                <p class="label">Wind</p>
+                <p class="currentWind"></p>
+            </div>
+          </div>
+      </section>
+      <section class="currentSection"></section>
+    </main>
+  </body>
+</html>
