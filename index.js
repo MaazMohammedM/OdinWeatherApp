@@ -10,7 +10,11 @@ const getWeather = async (query) => {
             'Content-Type': 'application/json'
         }
     });
+    
     const data = await response.json();
+    if(!response.ok){
+        throw new Error(`${data.error.message}`)
+    }
     return data;
 }
 
@@ -19,23 +23,30 @@ const getSearchedWeather = async () => {
     const searchContainer = document.querySelector('.searchContainer');
     const loading = document.querySelector('.loading');
     try {
-        const query = document.getElementById('searchWeather').value;
+        const input = document.getElementById('searchWeather');
+        const query = input.value.trim();
         if (query.length < 2) {
             alert("City name less then 2 characters");
             return
-        } else {
+        } 
             initalContainer.style.display = 'none';
             searchContainer.style.display = 'none';
             loading.style.display = "block";
             const data = await getWeather(query);
-            loading.style.display = 'none';
-            searchContainer.style.display = 'block';
+           
+            
             renderSearchUI(data.location.name, data.location.region, data.location.country, data.current.condition.text, data.current.condition.icon, data.current.temp_c, data.current.feelslike_c, data.current.humidity, data.current.wind_kph);
-            console.log(data)
-        }
+            console.log(data);
+            searchContainer.style.display = 'block';
+            input.value = '';
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        initalContainer.style.display = 'block';
+        let p = initalContainer.querySelector('p');
+        p.textContent = error.message
+    } finally{
+         loading.style.display = 'none';
     }
 }
 
@@ -113,16 +124,25 @@ const renderCurrentUI =(name,region,country,link,message)=>{
 }
 
 const getCurrentWeather = async () => {
+    const loading = document.querySelector('.currentLoading');
     try {
         const cordinates = await getLocation();
-        let latLong = `${cordinates.latitude},${cordinates.longitude}`;
+        let latLong = `${cordinates.latitude},${cordinates.longitude}`; 
+        loading.style.display = "block";
         const currentWeather = await getWeather(latLong);
         console.log(currentWeather);
         renderCurrentUI(currentWeather.location.name,currentWeather.location.region,
         currentWeather.location.country,currentWeather.current.condition.icon,currentWeather.current.condition.text)
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        let currentWeatherCard = document.querySelector('.currentWeatherCard');
+        currentWeatherCard.innerHTML = '';
+        let errorMsg = document.createElement('p');
+        errorMsg.textContent = error.message;
+        currentWeatherCard.append(errorMsg);
+    } finally{
+        loading.style.display = "none";
     }
 
 }

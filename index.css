@@ -32,7 +32,6 @@ main{
 .searchSection, .currentSection{
     width: 75%;
     border-radius: 2rem;
-    padding: 2rem;
     color: white;
 }
 
@@ -43,8 +42,24 @@ main{
     margin-bottom: 1rem;
 }
 
+.searchResultContainer{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   min-height: 50svh;
+}
+
 .searchContainer{
     display: none;
+    width: 100%;
+}
+
+.initalContainer > p{
+font-size: 2rem;
+background-color: var(--bg-secondary);
+padding: 2rem;
+border-radius: 1.5rem;
 }
 
 
@@ -52,7 +67,12 @@ main{
     display: none;
     border-radius: 100%;
     padding: 2rem;
+    width: 25%;
+}
+
+.currentLoading{
     width: 50%;
+    border-radius: 100%;
 }
 
 #searchWeather{
@@ -130,6 +150,21 @@ main{
 }
 
 .currentSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 25%;
     background-color: var(--bg-secondary);
+    padding: 2rem;
+}
+
+.currentWeatherCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currentConditionCard{
+    display: flex;
+    align-items: center;
 }
